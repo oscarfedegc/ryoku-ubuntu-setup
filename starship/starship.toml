@@ -1,0 +1,72 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$conda\
+$cmd_duration\
+$line_break\
+$character"""
+
+palette = "ryoku"
+
+[palettes.ryoku]
+background = "#000000"
+surface = "#151815"
+foreground = "#cdc4ba"
+muted = "#8f8982"
+green = "#3f8f71"
+bright_green = "#65b88f"
+red = "#c66f6f"
+yellow = "#b59b65"
+blue = "#6f91a8"
+cyan = "#5a9791"
+
+[username]
+show_always = true
+style_user = "fg:foreground"
+style_root = "fg:red bold"
+format = "[$user]($style)"
+
+[hostname]
+ssh_only = false
+style = "fg:muted"
+format = "[@$hostname]($style)  "
+
+[directory]
+style = "fg:green bold"
+format = "[$path]($style) "
+truncation_length = 3
+truncate_to_repo = false
+home_symbol = "~"
+read_only = " 󰌾"
+
+[git_branch]
+symbol = " "
+style = "fg:bright_green"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "fg:yellow"
+format = "([$all_status$ahead_behind]($style)) "
+
+[conda]
+symbol = ""
+style = "fg:muted"
+format = "[$environment]($style) "
+ignore_base = false
+
+[cmd_duration]
+min_time = 2000
+style = "fg:muted"
+format = "[$duration]($style) "
+
+[character]
+success_symbol = "[❯](fg:green bold)"
+error_symbol = "[❯](fg:red bold)"
+vimcmd_symbol = "[❮](fg:green bold)"

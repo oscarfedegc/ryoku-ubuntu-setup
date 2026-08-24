@@ -1,0 +1,47 @@
+gui:
+  theme:
+    activeBorderColor:
+      - "#3f8f71"
+      - bold
+
+    inactiveBorderColor:
+      - "#585b58"
+
+    searchingActiveBorderColor:
+      - "#5a9791"
+      - bold
+
+    optionsTextColor:
+      - "#6f91a8"
+
+    selectedLineBgColor:
+      - "#1b3127"
+
+    inactiveViewSelectedLineBgColor:
+      - "#0d0f0d"
+
+    cherryPickedCommitFgColor:
+      - "#eee7df"
+
+    cherryPickedCommitBgColor:
+      - "#987aa1"
+
+    markedBaseCommitFgColor:
+      - "#000000"
+
+    markedBaseCommitBgColor:
+      - "#b59b65"
+
+    unstagedChangesColor:
+      - "#c66f6f"
+
+  authorColors:
+    "*": "#8f8982"
+
+  showFileTree: true
+  showListFooter: true
+  showRandomTip: false
+  showCommandLog: false
+  nerdFontsVersion: ""
+
+  border: rounded

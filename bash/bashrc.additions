@@ -1,0 +1,43 @@
+# -----------------------------------------------------------------------------
+# Ryoku shell additions
+# -----------------------------------------------------------------------------
+
+# Keep a block cursor at the Bash prompt.
+printf '\e[2 q'
+
+# Starship prompt.
+eval "$(starship init bash)"
+
+# fzf.
+export FZF_DEFAULT_COMMAND="fdfind --type f --hidden --follow --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fdfind --type d --hidden --follow --exclude .git"
+
+export FZF_DEFAULT_OPTS="
+  --height=55%
+  --layout=reverse
+  --border=rounded
+  --info=inline
+  --prompt='> '
+  --pointer='>'
+  --marker='+'
+  --color=bg:#000000
+  --color=bg+:#1b3127
+  --color=fg:#cdc4ba
+  --color=fg+:#eee7df
+  --color=hl:#3f8f71
+  --color=hl+:#65b88f
+  --color=info:#8f8982
+  --color=prompt:#3f8f71
+  --color=pointer:#65b88f
+  --color=marker:#b59b65
+  --color=spinner:#5a9791
+  --color=header:#6f91a8
+  --color=border:#585b58
+"
+
+[ -f /usr/share/doc/fzf/examples/completion.bash ] && \
+    source /usr/share/doc/fzf/examples/completion.bash
+
+[ -f /usr/share/doc/fzf/examples/key-bindings.bash ] && \
+    source /usr/share/doc/fzf/examples/key-bindings.bash
